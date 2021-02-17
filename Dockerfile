@@ -6,6 +6,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install php7.4 liba
 
 # copy index.php ke web server (/var/www/trucorp2)
 ADD index.php /var/www/trucorp2/
+ADD usercount.php /var/www/trucorp2/
 
 # ganti web server directory dary /var/www/html menjadi /var/www/trucorp2
 RUN sed -i "s/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/trucorp2/g" /etc/apache2/sites-enabled/000-default.conf
